@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "fullname": "Kevin Durant",
+    "username": "KDurant",
+    "email": "ghulam@gmail.com",
+    "password": "ghulam",
+    "contact": "1234567890",
+    "company": "ABC company",
+    "speciality": "Software Engineer",
+    "role": "ROLE_RECRUITER"
+  },
+  {
+    "id": 2,
+    "fullname": "Lebron James",
+    "username": "LJames",
+    "email": "james@gmail.com",
+    "password": "james123",
+    "contact": "1234567890",
+    "company": "XYZ company",
+    "speciality": "Software Engineer",
+    "role": "ROLE_RECRUITER"
+  }
+]

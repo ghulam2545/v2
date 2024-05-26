@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "fullname": "John Doe",
+    "username": "john123e",
+    "email": "fake@gmail.com",
+    "password": "fake123",
+    "contact": "1234567890",
+    "skills": "Angular, Java, Spring, Git",
+    "role": "ROLE_APPLICANT"
+  },
+  {
+    "id": 2,
+    "fullname": "Belal Hashim",
+    "username": "belal123",
+    "email": "belal@gmail.com",
+    "password": "belal123",
+    "contact": "1234567890",
+    "skills": "Java, Spring, Git",
+    "role": "ROLE_APPLICANT"
+  }
+]

@@ -1,0 +1,236 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="form-container p-4 ">
+                <h4 class="text-center">Apply for Job</h4>
+                <p class="text-center">{{ job_title }}</p>
+                <hr>
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-bs-toggle="tab" href="#basicInfo">Basic Info</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#resume">Resume & Docs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#comments">Comments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#review">Review</a>
+                    </li>
+                </ul>
+
+                <!-- Tab panes -->
+                <form [formGroup]="apply_form" (ngSubmit)="onSubmit()">
+                    <div class="tab-content">
+                        <!-- Basic Info Tab -->
+                        <div id="basicInfo" class="tab-pane active">
+                            <div class="py-4">
+                                <div class="mb-3">
+                                    <label class="form-label required">Full Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter your full name"
+                                        formControlName="fullname" required>
+                                    <div *ngIf="f('fullname')?.invalid && f('fullname')?.touched">
+                                        <small class="text-danger" *ngIf="f('fullname')?.errors?.['required']">Fullname
+                                            is
+                                            required.</small>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label required">Email</label>
+                                    <input type="email" class="form-control" placeholder=" Enter your email address"
+                                        formControlName="email" required>
+                                    <div *ngIf="f('email')?.invalid && f('email')?.touched">
+                                        <small class="text-danger" *ngIf="f('email')?.errors?.['required']">Please
+                                            provide email address.</small>
+                                        <small class="text-danger" *ngIf="f('email')?.errors?.['email']">Invalid
+                                            email format.</small>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label required">Phone Number</label>
+                                    <input type="tel" class="form-control" placeholder="Enter your contact number"
+                                        formControlName="contact" required>
+                                    <div *ngIf="f('contact')?.invalid && f('contact')?.touched">
+                                        <small class="text-danger" *ngIf="f('contact')?.errors?.['required']">Phone
+                                            number
+                                            is
+                                            required.</small>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label required">Highest Education</label>
+                                    <select class="form-select" aria-label="Default select example"
+                                        formControlName="education">
+                                        <option value="BTECH/BCA" selected>B.Tech/BCA</option>
+                                        <option value="MTECH/MCA">M.Tech/MCA</option>
+                                        <option value="BA/MA">BA/MA</option>
+                                        <option value="B.Sc">B.Sc</option>
+                                        <option value="B.E">B.E</option>
+                                        <option value="PHD">PHD</option>
+                                    </select>
+                                    <div *ngIf="f('education')?.invalid && f('education')?.touched">
+                                        <small class="text-danger"
+                                            *ngIf="f('education')?.errors?.['required']">Education is
+                                            required.</small>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label required">Field of Education</label>
+                                    <select class="form-select" aria-label="Default select example"
+                                        formControlName="field">
+                                        <option value="Computer Science" selected>Computer Science</option>
+                                        <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                        <option value="Civil Engineering">Civil Engineering</option>
+                                        <option value="Electrical Engineering">Electrical Engineering</option>
+                                        <option value="Electronics and Communication">Electronics and Communication
+                                        </option>
+                                        <option value="Information Technology">Information Technology</option>
+                                        <option value="Physics">Physics</option>
+                                        <option value="Chemistry">Chemistry</option>
+                                        <option value="Mathematics">Mathematics</option>
+                                        <option value=">Biology">Biology</option>
+                                        <option value="Economics">Economics</option>
+                                    </select>
+                                    <div *ngIf="f('field')?.invalid && f('field')?.touched">
+                                        <small class="text-danger" *ngIf="f('field')?.errors?.['required']">Education
+                                            field is
+                                            required.</small>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label required">Highest Education Performance</label>
+                                    <select class="form-select" aria-label="Default select example"
+                                        formControlName="performance">
+                                        <option value="50-60%" selected>50-60%</option>
+                                        <option value="60-70%">60-70%</option>
+                                        <option value="70-80%">70-80%</option>
+                                        <option value="80-90%">80-90%</option>
+                                        <option value="90-100%">90-100%</option>
+                                    </select>
+                                    <div *ngIf="f('performance')?.invalid && f('performance')?.touched">
+                                        <small class="text-danger"
+                                            *ngIf="f('performance')?.errors?.['required']">Education performance is
+                                            required.</small>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label required">Skills</label>
+                                    <input type="text" class="form-control"
+                                        placeholder="Enter your skills, seperate by comma" formControlName="skills"
+                                        required>
+                                    <div *ngIf="f('skills')?.invalid && f('skills')?.touched">
+                                        <small class="text-danger" *ngIf="f('skills')?.errors?.['required']">Skills are
+                                            required.</small>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label required">Experience (in year)</label>
+                                    <select class="form-select" aria-label="Default select example"
+                                        formControlName="experience">
+                                        <option value="FRESHER" selected>Fresher</option>
+                                        <option value="1 year">1 year</option>
+                                        <option value="2 year">2 year</option>
+                                        <option value="3 year">3 year</option>
+                                        <option value="4 year">4 year</option>
+                                        <option value="5 year">5 year</option>
+                                        <option value="6 or above">6 or above</option>
+                                    </select>
+                                    <div *ngIf="f('experience')?.invalid && f('experience')?.touched">
+                                        <small class="text-danger"
+                                            *ngIf="f('experience')?.errors?.['required']">Experience
+                                            is
+                                            required.</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Resume & Cover Letter Tab -->
+                        <div id="resume" class="tab-pane fade">
+                            <div class="py-4">
+                                <div class="mb-3">
+                                    <label class="form-label">Upload Resume</label>
+                                    <input type="file" class="form-control" required>
+                                    <!-- // todo
+                                    <div *ngIf="f('experience')?.invalid && f('experience')?.touched">
+                                        <small class="text-danger"
+                                            *ngIf="f('experience')?.errors?.['required']">Experience
+                                            is
+                                            required.</small>
+                                    </div> -->
+                                </div>
+                                <div class="mb-3">
+                                    <label for="resume" class="form-label">Additional Docs</label>
+                                    <input type="file" class="form-control" id="resume" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Cover Letter</label>
+                                    <textarea class="form-control" rows="4" placeholder="Write your cover letter"
+                                        formControlName="cover"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Portfolio Tab -->
+                        <div id="portfolio" class="tab-pane fade">
+                            <div class="py-4">
+                                <div class="mb-3">
+                                    <label class="form-label">Portfolio (Optional)</label>
+                                    <input type="url" class="form-control" placeholder="Enter your portfolio URL"
+                                        formControlName="portfolio">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">LinkedIn Profile (Optional)</label>
+                                    <input type="url" class="form-control" placeholder="Enter your LinkedIn profile URL"
+                                        formControlName="linkedin">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Github Profile (Optional)</label>
+                                    <input type="url" class="form-control" placeholder="Enter your LinkedIn profile URL"
+                                        formControlName="github">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Other Relevant Links (Optional)</label>
+                                    <textarea class="form-control" rows="2" placeholder="Enter any other relevant links"
+                                        formControlName="other"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Comments Tab -->
+                        <div id="comments" class="tab-pane fade">
+                            <div class="py-4">
+                                <div class="mb-3">
+                                    <label class="form-label">Comments (Optional)</label>
+                                    <textarea class="form-control" rows="4" placeholder="Add any additional comments"
+                                        formControlName="comments"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review Tab -->
+                        <div id="review" class="tab-pane fade">
+                            <div class="py-4">
+                                <p class="text-center">Please make sure, all the information you have entered are
+                                    correct.</p>
+                            </div>
+
+                            <div class="text-center">
+                                <div class="d-grid col-4 mx-auto pt-3">
+                                    <button class="btn btn-primary" type="submit"
+                                        [disabled]="apply_form.invalid">Review</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <h4 class="text-center mt-3">Post A New Job</h4>
+        <p class="text-center">Kindly fill below information</p>
+        <hr>
+
+        <form class="row" [formGroup]="post_form" (ngSubmit)="onSubmit()">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label class="form-label required">Title</label>
+                    <input type="text" class="form-control" placeholder="Enter title" formControlName="title">
+                    <div *ngIf="f('title')?.invalid && f('title')?.touched">
+                        <small class="text-danger" *ngIf="f('title')?.errors?.['required']">Title is
+                            required.</small>
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <label class="form-label required">Skills</label>
+                    <input type="text" class="form-control" placeholder="Enter skills" formControlName="skills">
+                    <div *ngIf="f('skills')?.invalid && f('skills')?.touched">
+                        <small class="text-danger" *ngIf="f('skills')?.errors?.['required']">Skills are
+                            required.</small>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label required">Location</label>
+                    <input type="text" class="form-control" placeholder="Enter location" formControlName="location">
+                    <div *ngIf="f('location')?.invalid && f('location')?.touched">
+                        <small class="text-danger" *ngIf="f('location')?.errors?.['required']">Location is
+                            required.</small>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label required">Experience</label>
+                    <input type="text" class="form-control" placeholder="Enter experience" formControlName="experience">
+                    <div *ngIf="f('experience')?.invalid && f('experience')?.touched">
+                        <small class="text-danger" *ngIf="f('experience')?.errors?.['required']">Experience is
+                            required.</small>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label required">Job Type</label>
+                    <select class="form-select" formControlName="type">
+                        <option value="FULLTIME">Full-time</option>
+                        <option value="PARTTIME">Part-time</option>
+                        <option value="CONTRACT">Contract</option>
+                        <option value="TEMPORARY">Temporary</option>
+                    </select>
+                    <div *ngIf="f('type')?.invalid && f('type')?.touched">
+                        <small class="text-danger" *ngIf="f('type')?.errors?.['required']">Job type is
+                            required.</small>
+                    </div>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="email_checbox">
+                    <label class="form-check-label" for="email_checbox">Allow for mail</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="call_checbox">
+                    <label class="form-check-label" for="call_checbox">Allow for call</label>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label class="form-label">Job Description</label>
+                    <textarea class="form-control" rows="4" placeholder="Enter job description" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Responsibilities</label>
+                    <textarea class="form-control" rows="4" placeholder="Enter job description" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Requirements</label>
+                    <textarea class="form-control" rows="4" placeholder="Enter job description" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Additional Information</label>
+                    <textarea class="form-control" rows="3" placeholder="Enter job description" required></textarea>
+                </div>
+            </div>
+            <div class="d-grid col-3 mx-auto pt-3">
+                <button class="btn btn-primary mb-3" type="submit" [disabled]="post_form.invalid">Post</button>
+            </div>
+        </form>
+    </div>
+</div>

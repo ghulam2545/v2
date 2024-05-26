@@ -1,0 +1,39 @@
+<!-- todo: validation -->
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <h4 class="text-center mt-3">Job Search</h4>
+            <p class="text-center">Kindly fill below information</p>
+            <hr>
+
+            <form [formGroup]="search_form" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label class="form-label required">Keywords</label>
+                    <input type="text" class="form-control" placeholder="Enter keywords" formControlName="keyword"
+                        required>
+                    <div *ngIf="f('keyword')?.invalid && f('keyword')?.touched">
+                        <small class="text-danger" *ngIf="f('keyword')?.errors?.['required']">Keyword is
+                            required.</small>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Location (optinal)</label>
+                    <input type="text" class="form-control" placeholder="Enter location" formControlName="location">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Job Type (optional)</label>
+                    <select class="form-select" formControlName="type">
+                        <option value="">Any</option>
+                        <option value="fulltime">Full-time</option>
+                        <option value="parttime">Part-time</option>
+                        <option value="contract">Contract</option>
+                        <option value="temporary">Temporary</option>
+                    </select>
+                </div>
+                <div class="d-grid col-6 mx-auto pt-3">
+                    <button class="btn btn-primary mb-3" type="submit" [disabled]="search_form.invalid">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

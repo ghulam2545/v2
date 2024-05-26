@@ -1,0 +1,107 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="p-4 ">
+                <h5 class="mb-4">{{ job.title }}</h5>
+                <ul class="list-group-flush">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <strong>Company Name: </strong>
+                        </div>
+                        <div class="col-sm-9">{{ job.company }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <strong>Location: </strong>
+                        </div>
+                        <div class="col-sm-9">{{ job.location }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <strong>Skills: </strong>
+                        </div>
+                        <div class="col-sm-9">{{ job.skills }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <strong>Experience: </strong>
+                        </div>
+                        <div class="col-sm-9">{{ job.experience }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <strong>Job Type: </strong>
+                        </div>
+                        <div class="col-sm-9">{{ job.type }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <strong>Post Date: </strong>
+                        </div>
+                        <div class="col-sm-9">{{ job.date }}</div>
+                    </div>
+                </ul>
+            </div>
+
+            <!-- Description Section -->
+            <div class="p-4">
+                <h5 class="mb-4">Description:</h5>
+                <ul>
+                    <li>Developing user interfaces for web applications using HTML, CSS, and JavaScript</li>
+                    <li>Collaborating with the design team to ensure the technical feasibility of UI/UX designs</li>
+                    <li>Optimizing applications for maximum speed and scalability</li>
+                    <li>Implementing responsive designs for various devices and screen sizes</li>
+                    <li>Staying up-to-date with the latest frontend development technologies and best practices</li>
+                </ul>
+            </div>
+
+            <!-- Responsibilities Section -->
+            <div class="p-4">
+                <h5 class="mb-4">Responsibilities:</h5>
+                <ul>
+                    <li>Developing user interfaces for web applications using HTML, CSS, and JavaScript</li>
+                    <li>Collaborating with the design team to ensure the technical feasibility of UI/UX designs</li>
+                    <li>Optimizing applications for maximum speed and scalability</li>
+                    <li>Implementing responsive designs for various devices and screen sizes</li>
+                    <li>Staying up-to-date with the latest frontend development technologies and best practices</li>
+                </ul>
+            </div>
+
+            <!-- Requirements Section -->
+            <div class="p-4">
+                <h5 class="mb-4">Requirements:</h5>
+                <ul>
+                    <li>Bachelor's degree in Computer Science, Engineering, or related field</li>
+                    <li>2-3 years of experience in frontend development</li>
+                    <li>Strong proficiency in HTML, CSS, and JavaScript</li>
+                    <li>Experience with modern JavaScript frameworks/libraries such as React, Angular, or Vue.js
+                    </li>
+                    <li>Understanding of cross-browser compatibility issues and ways to work around them</li>
+                    <li>Excellent communication and teamwork skills</li>
+                </ul>
+            </div>
+
+            <!-- Additional Information Section -->
+            <div class="p-4">
+                <h5 class="mb-4">Additional Information:</h5>
+                <ul class="list-group-flush">
+                    <li class="list-group-item "><strong>Email to: </strong>NA</li>
+                    <li class="list-group-item "><strong>Call to: </strong>NA</li>
+                </ul>
+
+                <p>This is a great opportunity to join a dynamic team and work on exciting projects in a fast-paced
+                    environment. We offer competitive salaries, comprehensive benefits, and opportunities for
+                    professional growth.</p>
+                <p>Please note that only shortlisted candidates will be contacted for interviews.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-4 ">
+                <div class="d-grid gap-2 col-10 mx-auto">
+                    <button class="btn btn-primary" type="button" routerLink="/apply/{{ id }}">Apply Now</button>
+                    <button class="btn btn-outline-secondary" type="button">Share Job</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="navbar navbar-light bg-light nav-spacing">
+    <div class="left">
+        <a href="" routerLink="/">
+            <i class="bi bi-ui-checks-grid"></i>
+        </a>
+    </div>
+
+    <div class="center">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="" routerLink="/">
+                <span>Ominia</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="right">
+        @if (!is_logged()) {
+        <a href="" routerLink="/signup">
+            <button type="button" class="btn btn-outline-primary btn-sm">Register</button>
+        </a>
+        <a href="" routerLink="/login">
+            <button type="button" class="btn btn-outline-primary btn-sm">Login</button>
+        </a>
+        } @else {
+        <a href="" routerLink="{{ account() }}">
+            <button type="button" class="btn btn-outline-primary btn-sm">Account</button>
+        </a>
+        <a href="" (click)="logout()">
+            <button type="button" class="btn btn-outline-primary btn-sm">Logout</button>
+        </a>
+        }
+    </div>
+</div>

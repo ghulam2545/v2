@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "jobId": 1,
+    "fullname": "John Doe",
+    "email": "john@gmail.com",
+    "contact": "1234567890",
+    "education": "B.Tech",
+    "field": "Computer Science",
+    "performance": "A+",
+    "cover": "I am a computer science graduate with a passion for programming. I have worked on multiple projects and have a good understanding of the concepts.",
+    "portfolio": "",
+    "linkedin": "https://www.linkedin.com/in/johndoe",
+    "github": "",
+    "other": "",
+    "comments": "Good candidate for the job"
+  },
+  {
+    "id": 2,
+    "jobId": 1,
+    "fullname": "Jane Doe",
+    "email": "mail@gmail.com",
+    "contact": "1234567890",
+    "education": "B.Tech",
+    "field": "Computer Science",
+    "performance": "A+",
+    "cover": "I am a computer science graduate with a passion for programming. I have worked on multiple projects and have a good understanding of the concepts.",
+    "portfolio": "",
+    "linkedin": "https://www.linkedin.com/in/janedoe",
+    "github": "",
+    "other": "",
+    "comments": "Good candidate for the job"
+  }
+]

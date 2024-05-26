@@ -1,0 +1,25 @@
+.nav-spacing {
+    padding: 1rem 2.2rem;
+}
+
+a {
+    color: rgb(24, 21, 21);
+}
+
+a i {
+    font-size: 20px;
+    font-weight: lighter;
+    padding: 4px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+span {
+    font-size: 1.8rem;
+}
+
+button {
+    margin: auto 3px;
+}

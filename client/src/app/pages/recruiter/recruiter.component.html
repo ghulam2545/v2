@@ -1,0 +1,100 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-header">
+                    Recruiter
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ recruiter.fullname }}</h5>
+                    <img src="assets/image.png" alt="">
+                    <hr>
+                    <strong>Company Name: </strong>
+                    <p>{{ recruiter.company }}</p>
+                    <strong>Speciality: </strong>
+                    <p>{{ recruiter.speciality }}</p>
+                    <div class="d-grid col-6 mx-auto pt-3">
+                        <a href="" routerLink="/post" class="btn btn-outline-primary btn-sm">Post Job</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4 class="text-center m-3">Applications</h4>
+            <hr>
+
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-bs-toggle="tab" href="#applicationRecieved">Application
+                            Recieved</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#jobPosted">Job Posted</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="tab-content">
+                    <!-- applicant tab -->
+                    <div id="applicationRecieved" class="tab-pane fade show active">
+                        <div class="container mt-4">
+                            <div class="row justify-content-center">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Job Title</th>
+                                            <th scope="col">Applicant count</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Associate Software Engineer</td>
+                                            <td>25</td>
+                                            <td>TODO</td>
+                                            <!-- <td><a href="" routerLink="/job"><i class="bi bi-app-indicator"></i></a>
+                                            </td> -->
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="jobPosted" class="tab-pane fade">
+                        <div class="container mt-4">
+                            <div class="row justify-content-center">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Job Title</th>
+                                            <th scope="col">Posted Date</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @for (job of jobs; track $index) {
+                                        <tr>
+                                            <td>{{ job.id }}</td>
+                                            <td>{{ job.title }}</td>
+                                            <td>{{ job.date }}</td>
+                                            <td>TODO</td>
+                                            <!-- <td><a href="" routerLink="/job"><i class="bi bi-app-indicator"></i></a>
+                                            </td> -->
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

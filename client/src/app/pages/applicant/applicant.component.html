@@ -1,0 +1,58 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-header">
+                    Applicant
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ applicant.fullname }}</h5>
+                    <img src="assets/image.png" alt="...">
+                    <hr>
+                    <strong>Skills: </strong>
+                    <p>{{ applicant.skills }}</p>
+                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4 class="text-center m-3">Applications</h4>
+            <hr>
+            <div class="container mt-4">
+                <div class="row justify-content-center">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Job Title</th>
+                                <th scope="col">Company Name</th>
+                                <th scope="col">Applied Date</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Associate Software Engineer</td>
+                                <td>Royal Enfield Ltd.</td>
+                                <td>31/02/2025</td>
+                                <td>TODO</td>
+                                <!-- <td><a href="" routerLink="/job"><i class="bi bi-app-indicator"></i></a></td> -->
+                            </tr>
+                            @for (job of jobs; track $index) {
+                            <tr>
+                                <td>{{ job.id }}</td>
+                                <td>{{ job.title }}</td>
+                                <td>{{ job.company }}</td>
+                                <td>{{ job.date }}</td>
+                                <td>TODO</td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

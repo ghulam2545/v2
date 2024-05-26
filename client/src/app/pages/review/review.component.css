@@ -1,0 +1,9 @@
+span i {
+    font-size: 22px;
+    padding: 0 8px;
+}
+
+.col-sm-4 {
+    white-space: nowrap;
+    padding: 3px;
+}

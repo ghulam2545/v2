@@ -1,0 +1,192 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <h4 class="text-center mt-3">Register</h4>
+            <p class="text-center">Kindly fill below information</p>
+            <hr>
+
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-bs-toggle="tab" href="#applicantRegister">Applicant
+                            Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#recruiterRegister">Recruiter
+                            Register</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="tab-content">
+
+                    <!-- applicant tab -->
+                    <div id="applicantRegister" class="tab-pane fade show active">
+                        <form class="py-4" [formGroup]="applicant_form" (ngSubmit)="onSubmit('applicant')">
+                            <div class="mb-3">
+                                <label class="form-label required">Full Name</label>
+                                <input type="text" class="form-control" placeholder="Enter your fullname"
+                                    formControlName="fullname" required>
+                                <div *ngIf="applicant_f('fullname')?.invalid && applicant_f('fullname')?.touched">
+                                    <small class="text-danger"
+                                        *ngIf="applicant_f('fullname')?.errors?.['required']">Fullname is
+                                        required.</small>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label required">Username</label>
+                                <input type="text" class="form-control" placeholder="Enter your username"
+                                    formControlName="username" required>
+                                <div *ngIf="applicant_f('username')?.invalid && applicant_f('username')?.touched">
+                                    <small class="text-danger"
+                                        *ngIf="applicant_f('username')?.errors?.['required']">Username is
+                                        required.</small>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label required">Email</label>
+                                <input type="email" class="form-control" placeholder="Enter your email address"
+                                    formControlName="email" required>
+                                <div *ngIf="applicant_f('email')?.invalid && applicant_f('email')?.touched">
+                                    <small class="text-danger" *ngIf="applicant_f('email')?.errors?.['required']">Please
+                                        provide email address.</small>
+                                    <small class="text-danger" *ngIf="applicant_f('email')?.errors?.['email']">Invalid
+                                        email format.</small>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label required">Password</label>
+                                <div class="input-group">
+                                    <input type="{{ password_field_type }}" class="form-control"
+                                        placeholder="Enter your password" formControlName="password" required>
+                                    <button class="btn btn-outline-secondary" type="button"
+                                        (click)="password_visibility()">
+                                        <i class="bi"
+                                            [ngClass]="{'bi-eye': password_field_type === 'password', 'bi-eye-slash': password_field_type !== 'password'}"></i>
+                                    </button>
+                                </div>
+                                <div *ngIf="applicant_f('password')?.invalid && applicant_f('password')?.touched">
+                                    <small class="text-danger"
+                                        *ngIf="applicant_f('password')?.errors?.['required']">Password must
+                                        be at least 6
+                                        character.</small>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label required">Contact No.</label>
+                                <input type="text" class="form-control" placeholder="Enter your contact no"
+                                    formControlName="contact" required>
+                                <div *ngIf="applicant_f('contact')?.invalid && applicant_f('contact')?.touched">
+                                    <small class="text-danger"
+                                        *ngIf="applicant_f('contact')?.errors?.['required']">Contact is
+                                        required.</small>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label required">Skills</label>
+                                <input type="email" class="form-control" placeholder="Enter comma seperated skills"
+                                    formControlName="skills" required>
+                                <div *ngIf="applicant_f('skills')?.invalid && applicant_f('skills')?.touched">
+                                    <small class="text-danger"
+                                        *ngIf="applicant_f('skills')?.errors?.['required']">Skills are
+                                        required.</small>
+                                </div>
+                            </div>
+                            <div class="d-grid col-6 mx-auto pt-3">
+                                <button class="btn btn-primary" type="submit"
+                                    [disabled]="applicant_form.invalid">Register</button>
+                            </div>
+                        </form>
+
+                        <div class="text-center">
+                            <p>Already registered? <a href="" routerLink="/login">Login here</a></p>
+                        </div>
+                    </div>
+
+                    <!-- recruiter tab -->
+                    <div id="recruiterRegister" class="tab-pane fade">
+                        <form class="py-3" [formGroup]="recruiter_form" (ngSubmit)="onSubmit('recruiter')">
+                            <div class="mb-3">
+                                <label class="form-label required">Full Name</label>
+                                <input type="text" class="form-control" placeholder="Enter your fullname"
+                                    formControlName="fullname" required>
+                                <div *ngIf="recruiter_f('fullname')?.invalid && recruiter_f('fullname')?.touched">
+                                    <small class="text-danger"
+                                        *ngIf="recruiter_f('fullname')?.errors?.['required']">Fullname is
+                                        required.</small>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label required">Username</label>
+                                <input type="text" class="form-control" placeholder="Enter your username"
+                                    formControlName="username" required>
+                                <div *ngIf="applicant_f('username')?.invalid && applicant_f('username')?.touched">
+                                    <small class="text-danger"
+                                        *ngIf="applicant_f('username')?.errors?.['required']">Username is
+                                        required.</small>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label required">Email</label>
+                                <input type="email" class="form-control" placeholder="Enter your email address"
+                                    formControlName="email" required>
+                                <div *ngIf="recruiter_f('email')?.invalid && recruiter_f('email')?.touched">
+                                    <small class="text-danger" *ngIf="recruiter_f('email')?.errors?.['required']">Please
+                                        provide email address.</small>
+                                    <small class="text-danger" *ngIf="recruiter_f('email')?.errors?.['email']">Invalid
+                                        email format.</small>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label required">Password</label>
+                                <div class="input-group">
+                                    <input type="{{ password_field_type }}" class="form-control"
+                                        placeholder="Enter your password" formControlName="password" required>
+                                    <button class="btn btn-outline-secondary" type="button"
+                                        (click)="password_visibility()">
+                                        <i class="bi"
+                                            [ngClass]="{'bi-eye': password_field_type === 'password', 'bi-eye-slash': password_field_type !== 'password'}"></i>
+                                    </button>
+                                </div>
+                                <div *ngIf="recruiter_f('password')?.invalid && recruiter_f('password')?.touched">
+                                    <small class="text-danger"
+                                        *ngIf="recruiter_f('password')?.errors?.['required']">Password must
+                                        be at least 6
+                                        character.</small>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label required">Contact No.</label>
+                                <input type="email" class="form-control" placeholder="Enter your contact no"
+                                    formControlName="contact" required>
+                                <div *ngIf="recruiter_f('contact')?.invalid && recruiter_f('contact')?.touched">
+                                    <small class="text-danger"
+                                        *ngIf="recruiter_f('contact')?.errors?.['required']">Contact is
+                                        required.</small>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label required">Company Name</label>
+                                <input type="text" class="form-control" placeholder="Enter your company name"
+                                    formControlName="company" required>
+                                <div *ngIf="recruiter_f('company')?.invalid && recruiter_f('company')?.touched">
+                                    <small class="text-danger"
+                                        *ngIf="recruiter_f('company')?.errors?.['required']">Company name is
+                                        required.</small>
+                                </div>
+                            </div>
+                            <div class="d-grid col-6 mx-auto pt-3">
+                                <button class="btn btn-primary" type="submit"
+                                    [disabled]="recruiter_form.invalid">Register</button>
+                            </div>
+                        </form>
+
+                        <div class="text-center">
+                            <p>Already registered? <a href="" routerLink="/login">Login here</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

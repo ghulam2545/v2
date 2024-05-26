@@ -1,0 +1,143 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+
+            <h4 class="text-center mt-3">Application Review</h4>
+            <p class="text-center"> {{ job.title }} <span><i class="bi bi-patch-check-fill"></i></span> {{ job.company
+                }}
+            </p>
+            <hr>
+
+            <form>
+                <div class="p-3">
+                    <ul class="list-group-flush">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <strong>Fullname: </strong>
+                            </div>
+                            <div class="col-sm-6">{{ application.fullname }}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <strong>Email: </strong>
+                            </div>
+                            <div class="col-sm-6">{{ application.email }}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <strong>Contact No.: </strong>
+                            </div>
+                            <div class="col-sm-6">{{ application.contact }}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <strong>Highest Education: </strong>
+                            </div>
+                            <div class="col-sm-6">{{ application.education }}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <strong>Field of Education: </strong>
+                            </div>
+                            <div class="col-sm-6">{{ application.field }}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <strong>Performance: </strong>
+                            </div>
+                            <div class="col-sm-6">{{ application.performance }}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <strong>Relevant Skills: </strong>
+                            </div>
+                            <div class="col-sm-6">{{ application.skills }}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <strong>Experience: </strong>
+                            </div>
+                            <div class="col-sm-6">{{ application.experience }}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <strong>Portfolio URL: </strong>
+                            </div>
+                            <div class="col-sm-6">
+                                <a href="">{{ application.portfolio || 'NA' }}</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <strong>Linkedin URL: </strong>
+                            </div>
+                            <div class="col-sm-6"><a href="">{{ application.linkedin || 'NA' }}</a></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <strong>Github URL: </strong>
+                            </div>
+                            <div class="col-sm-6"><a href="">{{ application.github || 'NA' }}</a></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <strong>Other: </strong>
+                            </div>
+                            <div class="col-sm-6">{{ application.other || 'NA' }}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <strong>Your Resume: </strong>
+                            </div>
+                            <div class="col-sm-6">{{ "sample.pdf" }}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <strong>Additional Docs: </strong>
+                            </div>
+                            <div class="col-sm-6">{{ "sample.pdf" }}</div>
+                        </div>
+                    </ul>
+                </div>
+
+                <div>
+                    <strong>Cover Letter: </strong>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores qui alias, et facilis repellat
+                        assumenda
+                        obcaecati sunt corporis accusamus ipsam odit distinctio iusto molestiae, reiciendis est
+                        suscipit. Amet, enim
+                        voluptatum?</p>
+                </div>
+                <div>
+                    <strong>Comments: </strong>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores qui alias, et facilis repellat
+                        assumenda
+                        obcaecati sunt corporis accusamus ipsam odit distinctio iusto molestiae, reiciendis est
+                        suscipit. Amet, enim
+                        voluptatum?</p>
+                </div>
+
+                <div class="d-flex m-4">
+                    <div class="d-grid col-4 mx-auto pt-3">
+                        <button class="btn btn-primary" type="submit" (click)="submit_application()">Submit</button>
+                    </div>
+                    <div class="d-grid col-3 mx-auto pt-3">
+                        <button class="btn btn-secondary" type="submit">Edit</button>
+                    </div>
+                    <div class="d-grid col-3 mx-auto pt-3">
+                        <button class="btn btn-outline-success" type="button"
+                            (click)="print_application()">Print</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="card border-success m-3" style="display: none;">
+        <div class="card-body">
+            Your submission has been recoreded may be you'd like to <a href="" (click)="print_application()">Print</a>
+            or return back to <a href="" routerLink="/">Home</a>.
+        </div>
+    </div>
+
+</div>
