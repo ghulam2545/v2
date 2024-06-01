@@ -43,4 +43,14 @@ public class JobService {
     public List<Job> getJobs() {
         return jobRepository.findAll();
     }
+
+    public List<Job> search(String keyword, String location, String type) {
+        if (location == null && type == null) {
+            return jobRepository.findByTitleContainsIgnoreCase(keyword);
+        } else if (type == null) {
+            return jobRepository.findByTitleContainsIgnoreCaseAndLocation(keyword, location);
+        } else {
+            return jobRepository.findByTitleContainsIgnoreCaseAndLocationAndType(keyword, location, type);
+        }
+    }
 }

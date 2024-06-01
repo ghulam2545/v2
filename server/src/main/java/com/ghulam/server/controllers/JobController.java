@@ -45,4 +45,18 @@ public class JobController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+
+    // todo: fix this endpoint
+    @PostMapping("/search")
+    public ResponseEntity<?> search(
+            @RequestParam(required = true) String keyword,
+            @RequestParam(required = false, defaultValue = "") String location,
+            @RequestParam(required = false, defaultValue = "") String type
+    ) {
+        try {
+            return ResponseEntity.ok(jobService.search(keyword, location, type));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
 }

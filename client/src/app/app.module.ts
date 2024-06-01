@@ -15,8 +15,9 @@ import { RecruiterComponent } from './pages/recruiter/recruiter.component';
 import { SearchComponent } from './pages/search/search.component';
 import { ReviewComponent } from './pages/review/review.component';
 import { RouterLink } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientInterceptor } from './utils/http-client-interceptor';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

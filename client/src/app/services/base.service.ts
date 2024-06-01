@@ -7,17 +7,17 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class BaseService {
-  
+
   public BASE_URL = 'http://localhost:8080/api/v2';
   login_status: boolean = false;
 
   constructor(
     public storageService: StorageService,
     public http: HttpClient
-  ) {}
+  ) { }
 
   is_logged(): boolean {
-    if(this.storageService.get('token') != null) {
+    if (this.storageService.get('token') != null) {
       this.login_status = true;
     }
     return this.login_status;
@@ -25,6 +25,10 @@ export class BaseService {
 
   logout() {
     this.storageService.clear();
+  }
+
+  signing_status(): boolean {
+    return this.login_status;
   }
 
 }
