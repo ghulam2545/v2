@@ -31,3 +31,7 @@ Frontend
 ![home](screenshot/desc.png)
 ![home](screenshot/apply.png)
 ![home](screenshot/register.png)
+
+TODOS:
+- File upload is not supported yet.
+- Access of resources/routing based on role, partially works
