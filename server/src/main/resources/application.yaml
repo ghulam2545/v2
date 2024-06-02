@@ -18,6 +18,11 @@ spring:
     console:
       enabled: true
       path: /console
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+
 
 server:
   port: 8080
